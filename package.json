@@ -2,10 +2,10 @@
   "name": "dictionary-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test jest",
-    "start": "node src/index.js",
+    "start": "knex migrate:latest && node src/index.js",
     "dev": "nodemon src/index.js"
   },
   "keywords": [],
