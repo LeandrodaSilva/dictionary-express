@@ -1,13 +1,18 @@
+const express = require('express');
+const router = express.Router();
 const LinguaRobot = require('../services/lingua-robot');
+const auth = require('../middlewares/auth');
 
-module.exports = {
-  async  create(request, response) {
-    const { word } = request.query;
+router.use(auth);
 
-    console.log(word);
+router.get('', async (req, res) => {
+  const { word } = req.query;
 
-    const resp = await LinguaRobot.get(`language/v1/entries/en/${word}`);
+  console.log(word);
 
-    return response.json(resp.data);
-  }
-}
+  const api = await LinguaRobot.get(`language/v1/entries/en/${word}`);
+
+  return res.json(api.data);
+})
+
+module.exports = app => app.use('/search', router)
