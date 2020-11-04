@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 const app = express();
 
 app.use(cors({
-  origin: process.env.CORS
+  origin: 'https://leandrodasilva.github.io'
 }));
 app.use(cors());
 app.use(BodyParser.json())
