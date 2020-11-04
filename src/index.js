@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const BodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
-const files = require('./middlewares/files');
 const app = express();
 
 app.use(cors({
