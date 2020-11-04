@@ -6,7 +6,7 @@
   "scripts": {
     "test": "cross-env NODE_ENV=test jest",
     "start": "knex migrate:latest && node src/index.js",
-    "dev": "nodemon src/index.js"
+    "dev": "knex migrate:latest && nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
